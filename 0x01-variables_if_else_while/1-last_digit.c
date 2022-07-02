@@ -2,27 +2,29 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - main block
- * Description: Print statements based on the last digit of the random number.
- * Return: 0
+ * main - Program Entry point
+ *
+ * Description: A program to determine wether an int is +ve, -ve or 0
+ *
+ * Return: 0 indicates success
  */
+
 int main(void)
 {
-	int n;
-	int m;
+	int n, last;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	m = n % 10;
+	/* your code goes there */
 
-	if (m > 5)
-		printf("Last digit of %i is %i and is greater than 5\n",
-				n, m);
-	else if (m == 0)
-		printf("Last digit of %i is %i and is 0\n", n, m);
+	last = n % 10;
+
+	if (last >= 6)
+		printf("Last digit of %d is %d and is greater than 5\n", n, n % 10);
+	else if (last < 6 && last != 0)
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
 	else
-		printf("Last digit of %i is %i and is less than 6 and not 0\n",
-				n, m);
+		printf("Last digit of %d is 0 and is 0\n", n);
 	return (0);
 }
 
@@ -61,14 +63,4 @@ int main(void)
 ~
 ~
 ~
-~
-~
-~
-~
-~
-~
-~
-~
-~
--- INSERT --                                                                  4,1           All
 
